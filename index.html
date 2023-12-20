@@ -78,15 +78,9 @@
     }
 
     function makePayload(deviceName) {
-        const checksum = crc16changgong(deviceName.slice(-5));
+        //const checksum = crc16changgong(deviceName.slice(-5));
         // prettier-ignore
-        return new Uint8Array([
-            0xFE, 0xFE, 0x09, 0xB2,
-            0x01, checksum & 0xFF, checksum >> 8, 0x00,
-            0x70, 0xE2, 0xEB, 0x20,
-            0x01, 0x01, 0x00, 0x00,
-            0x00, 0x6C, 0x30, 0x00
-        ]);
+        return new Uint8Array([254,254,9,178,1,209,54,10,35,18,0]);
     }
 
     let bluetoothDevice;
